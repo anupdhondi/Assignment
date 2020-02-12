@@ -1,0 +1,40 @@
+<section >
+ <form [formGroup]="addOrderForm" (ngSubmit)="onSubmit()">
+
+  <h1 mat-dialog-title style="display:block">Add Order Details</h1>
+
+  <mat-dialog-content style="width:300px">
+    <mat-form-field appearance="fill" style="display:block">
+      <mat-label>Order Number</mat-label>
+      <input matInput formControlName="id" >
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Due date" [matDatepicker]="picker" formControlName="due_date" >
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker  #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="fill" style="display:block">
+      <mat-label>Customer Name</mat-label>
+      <input matInput formControlName="customer_name" >
+    </mat-form-field>
+    <mat-form-field appearance="fill" style="display:block">
+      <mat-label>Customer Address</mat-label>
+      <input matInput formControlName="customer_address" >
+    </mat-form-field>
+    <mat-form-field appearance="fill" style="display:block">
+      <mat-label>Customer Phone</mat-label>
+      <input matInput formControlName="customer_phone" >
+    </mat-form-field>
+    <mat-form-field appearance="fill" style="display:block">
+      <mat-label>Order Total</mat-label>
+      <input matInput formControlName="order_total" >
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions style="display:block">
+    <button type="submit" mat-raised-button color="primary" [mat-dialog-close]="true" [disabled]="addOrderForm.invalid">Add</button>
+    <button mat-button [mat-dialog-close]="false">Cancel</button>
+  </mat-dialog-actions>`
+
+ </form>
+</section>
